@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trobar el numero</title>
+</head>
+<body>
+<button type="submit" onclick="buscaelnumero();return false">Busca el número</button>
+<script>
+ function buscaelnumero() {
+     var arraynumeros = [];
+     for (var i = 0; i < 500000; i++) {
+         var numerorandom = Math.floor(Math.random()*500000)+1;
+         arraynumeros[i]=numerorandom; 
+     }
+     alert ("Ha entrado");
+     var tiempoantes = Date.now();
+     alert(arraynumeros[654]);
+     var salir = false;
+     while(!salir){
+         var respuesta = prompt("Dime el número");
+         for (var i = 0; i < arraynumeros.length; i++) {
+             if (respuesta==arraynumeros[i]){
+                 var tiempoahora = Date.now();
+                 alert("LO HAS ACERTADO EN...."+(tiempoahora-tiempoantes)/1000+" SEGUNDOS");
+                 salir = true;
+                 break;
+             }
+         }
+     }
+
+ }  
+</script>
+</body>
+</html>
